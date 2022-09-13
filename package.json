@@ -10,9 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "admin-bro":"^4.0.0",
     "@admin-bro/hapi": "^3.0.0",
     "@hapi/boom": "^10.0.0",
     "@hapi/inert": "^7.0.0",
-    "hapi-auth-cookie": "^10.0.0"
+    "hapi-auth-cookie": "^10.0.0",
+    "hapi-auth-jwt2": "^10.0.0",
+    "@hapi/vision": "^7.0.0",
+    "hapi-swagger": "^14.5.5",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "joi": "^17.6.0"
   }
 }

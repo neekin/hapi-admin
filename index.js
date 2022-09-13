@@ -1,35 +1,30 @@
-'use strict';
-const pkg = require('./package.json')
-const AdminBroPlugin = require('@admin-bro/hapi')
-
+"use strict";
+const pkg = require("./package");
+const _ = require("lodash");
+const Inert = require("@hapi/inert");
+const Vision = require("@hapi/vision");
+// 引入依赖的插件
+const adminPlugin = require("./lib/admin");
+const jwtPlugin = require("./lib/jwt");
+const swaggerPlugin = require("./lib/swagger");
 exports.plugin = {
-    pkg,
-    register: async function (server, options) {
-        const ADMIN = {
-            email: 'text@example.com',
-            password: 'password',
-            role: 'admin'
-        }
-        const adminBroOptions = {
-            auth: {
-                authenticate: (email, password) => {
-                  if (ADMIN.email === email && ADMIN.password === password) {
-                    return ADMIN
-                  }
-                  return null
-                },
-                strategy: 'session',
-                cookieName: 'hapi-admin',
-                cookiePassword: process.env.COOKIE_PASSWORD || 'FWnqrb9dQetxAFptS4hn4hEpRn54KrWc',
-                isSecure: true, //only https requests
-              },
-              ...options
-            }
-
-        await server.register({
-            plugin: AdminBroPlugin,
-            options: adminBroOptions,
-         })
-         
+  pkg,
+  register: async function (server, options) {
+    if (options.admin) {
+      let adminOptions = _.merge(adminPlugin.options, options.admin);
+      adminPlugin.options = adminOptions;
     }
+    if(options.swaager){
+      let swaagerOptions = _.merge(swaggerPlugin.options, options.swaager);
+      swaggerPlugin.options = swaagerOptions;
+    }
+
+    await server.register([
+      Inert,
+      Vision,
+      adminPlugin,
+      swaggerPlugin,
+      { plugin: jwtPlugin },
+    ]);
+  },
 };
