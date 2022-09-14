@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎页</title>
+</head>
+<body>
+    <h1>恭喜你，启动成功了。</h1>
+    <p>首先非常感谢你<a href="https://github.com/neekin/hapi-admin">hpai-admin</a></p>
+    <p>如果本项目对你有帮助，欢迎来个<a href="https://github.com/neekin/hapi-admin">start</a>吧</p>
+    <p>也欢迎你来给我提issue</p>
+    <pre>
+        如果想自定义首页内容 请先在配置项
+        const server = await createServer({index:true}) 设为true
+        然后再自己配置
+        server.route({
+            method: 'GET',
+            path: '/',
+            options:{auth: false},
+            handler:(server,h)=>{
+                return '自定义首页内容'
+            } 
+        })
+    </pre>
+</body>
+</html>

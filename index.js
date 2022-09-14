@@ -1,5 +1,6 @@
 const Hapi = require('@hapi/hapi')
 const _ = require('lodash')
+const path = require('path')
 module.exports ={
     createServer:async function(options={}){
         const initOptions={
@@ -9,6 +10,17 @@ module.exports ={
         const serverOptions=_.merge(initOptions,options.server)
         const server = Hapi.server(serverOptions)
         await server.register({plugin:require('./plugins'),options:{...options}})
+        if(!options.index){
+            server.route({
+                method: 'GET',
+                path: '/',
+                options:{auth: false},
+                handler:(server,h)=>{
+                    const res = h.file(path.resolve(__dirname,'index.html'));
+                    return res
+                }
+            })
+        }
         return server
     }
 } 
