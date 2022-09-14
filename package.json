@@ -1,6 +1,6 @@
 {
   "name": "hapi-admin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "admin-bro":"^4.0.0",
     "@admin-bro/hapi": "^3.0.0",
+    "@hapi/hapi":"^20.2.2",
     "@hapi/boom": "^10.0.0",
     "@hapi/inert": "^7.0.0",
     "hapi-auth-cookie": "^10.0.0",
