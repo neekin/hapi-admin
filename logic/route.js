@@ -34,12 +34,12 @@ class Route {
         const fileName = 'index.js';
         const routeName = pluralize.plural(modelName);
         const searchText = 'server.register';
-        const text = `\t\t{ plugin: require(\'./routes/${routeName}\') },\n`;
+        const text = `\t\t{ plugin: require(\'./routes/${routeName}\'),options:{prefix:'/api/v1',config:{tags:['api','${modelName}']}} },\n`;
         
         FileEdit.injectTextToFile(fileName, searchText, text);
         
         // adminResources
-        FileEdit.injectTextToFile(fileName, 'const adminResources',`\t\t{ resource: require(\'./models/${modelName}\'),options:{ } },\n`);
+        FileEdit.injectTextToFile(fileName, 'const adminResources',`\t\t{ resource: require(\'./models/${modelName}\'),options:{ properties:{...visibleProperties} } },\n`);
 
         console.log('Route registered!');
     }
