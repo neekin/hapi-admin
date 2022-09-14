@@ -34,7 +34,7 @@ class Route {
         const fileName = 'index.js';
         const routeName = pluralize.plural(modelName);
         const searchText = 'server.register';
-        const text = `\t\t{ plugin: require(\'./routes/${routeName}\'),options:{prefix:'/api/v1',config:{tags:['api','${modelName}']}} },\n`;
+        const text = `\t\t{ plugin: require(\'./routes/${routeName}\'),options:{prefix:'/api/v1',apiConfig:{tags:['api','${modelName}']}} },\n`;
         
         FileEdit.injectTextToFile(fileName, searchText, text);
         
