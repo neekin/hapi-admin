@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const <ModelName>Schema = new Schema({
 <Attributes>
+}, {
+    timestamps: true
 });
 
 const <ModelName> = mongoose.model('<ModelName>', <ModelName>Schema);

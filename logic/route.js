@@ -39,7 +39,7 @@ class Route {
         FileEdit.injectTextToFile(fileName, searchText, text);
         
         // adminResources
-        FileEdit.injectTextToFile(fileName, 'const adminResources',`\t\t{ resource: require(\'./routes/${modelName}\'),options:{ navigation: contentNavigation } },\n`);
+        FileEdit.injectTextToFile(fileName, 'const adminResources',`\t\t{ resource: require(\'./models/${modelName}\'),options:{ } },\n`);
 
         console.log('Route registered!');
     }

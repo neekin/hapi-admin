@@ -8,6 +8,7 @@ const adminPlugin = require("./lib/admin");
 const jwtPlugin = require("./lib/jwt");
 const swaggerPlugin = require("./lib/swagger");
 
+
 exports.plugin = {
   pkg,
   register: async function (server, options) {

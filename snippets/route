@@ -3,12 +3,13 @@ const <ControllerNameCapitalized>Controller = require('../controllers/<Controlle
 exports.plugin = {
     pkg: require('../package.json'),
     register: async function(server, options) {
-
-        server.route({ path: '/<RouteNameLowered>', method: 'GET', handler: <ControllerNameCapitalized>Controller.getAll });
-        server.route({ path: '/<RouteNameLowered>/{id}', method: 'GET', handler: <ControllerNameCapitalized>Controller.findById });
-        server.route({ path: '/<RouteNameLowered>', method: 'POST', handler: <ControllerNameCapitalized>Controller.create });
-        server.route({ path: '/<RouteNameLowered>/{id}', method: 'PATCH', handler: <ControllerNameCapitalized>Controller.edit });
-        server.route({ path: '/<RouteNameLowered>/{id}', method: 'DELETE', handler: <ControllerNameCapitalized>Controller.delete });
+        const prefix = options.prefix || ''
+        const config = options.confg || {}
+        server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>`,  config:{...config},handler: <ControllerNameCapitalized>Controller.getAll });
+        server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>/{id}`,  config:{...config},handler: <ControllerNameCapitalized>Controller.findById });
+        server.route({method: 'POST', path: `${prefix}/<RouteNameLowered>`, config:{...config},handler: <ControllerNameCapitalized>Controller.create });
+        server.route({method: 'PATCH', path: `${prefix}/<RouteNameLowered>/{id}`, config:{...config},handler: <ControllerNameCapitalized>Controller.edit });
+        server.route({ method: 'DELETE', path: `${prefix}/<RouteNameLowered>/{id}`, config:{...config},handler: <ControllerNameCapitalized>Controller.delete });
 
     }
 }
