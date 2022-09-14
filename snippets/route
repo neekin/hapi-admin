@@ -1,0 +1,14 @@
+const <ControllerNameCapitalized>Controller = require('../controllers/<ControllerNameLowered>_controller');
+
+exports.plugin = {
+    pkg: require('../package.json'),
+    register: async function(server, options) {
+
+        server.route({ path: '/<RouteNameLowered>', method: 'GET', handler: <ControllerNameCapitalized>Controller.getAll });
+        server.route({ path: '/<RouteNameLowered>/{id}', method: 'GET', handler: <ControllerNameCapitalized>Controller.findById });
+        server.route({ path: '/<RouteNameLowered>', method: 'POST', handler: <ControllerNameCapitalized>Controller.create });
+        server.route({ path: '/<RouteNameLowered>/{id}', method: 'PATCH', handler: <ControllerNameCapitalized>Controller.edit });
+        server.route({ path: '/<RouteNameLowered>/{id}', method: 'DELETE', handler: <ControllerNameCapitalized>Controller.delete });
+
+    }
+}

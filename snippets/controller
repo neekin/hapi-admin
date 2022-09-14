@@ -1,0 +1,42 @@
+const <ServiceNameCapitalized> = require('../services/<ServiceNameLowered>');
+
+class <ControllerNameCapitalized>Controller {
+
+    static getAll(request, h) {
+        const filter = request.query;
+        return <ServiceNameCapitalized>.getAll(filter);
+    }
+
+    static findById(request, h) {
+        const <ModelNameLowered>Id = request.params.id;
+        return <ServiceNameCapitalized>.findById(<ModelNameLowered>Id);
+    }
+
+    static async create(request, h) {
+        try {
+            const <ModelNameLowered> = await <ServiceNameCapitalized>.create(request.payload);
+            return h.response(<ModelNameLowered>).code(201);
+        } catch(errors) {
+            return h.response(errors).code(422);
+        }
+    }
+
+    static edit(request, h) {
+        const <ModelNameLowered>Id = request.params.id;
+        const <ModelNameLowered>Data = request.payload;
+        try {
+            return <ServiceNameCapitalized>.edit(<ModelNameLowered>Id, <ModelNameLowered>Data);
+        } catch(errors) {
+            return h.response(errors).code(422);
+        }
+    }
+
+    static async delete(request, h) {
+        const <ModelNameLowered>Id = request.params.id;
+        await <ServiceNameCapitalized>.delete(<ModelNameLowered>Id);
+        return h.response({}).code(204);
+    }
+
+}
+
+module.exports = <ControllerNameCapitalized>Controller;

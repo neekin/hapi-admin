@@ -1,13 +1,16 @@
 {
   "name": "hapi-admin",
   "version": "0.0.2",
-  "description": "",
+  "description": "开箱即用的hapi admin框架。",
   "main": "index.js",
+  "bin": {
+    "scaffold": "bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["hapi_admin","hapi-admin"],
+  "author": "Nee Kin",
   "license": "ISC",
   "dependencies": {
     "admin-bro": "^4.0.0",
@@ -21,6 +24,8 @@
     "hapi-swagger": "^14.5.5",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "joi": "^17.6.0"
+    "joi": "^17.6.0",
+    "fs-extra": "^10.0.0",
+    "pluralize": "^8.0.0"
   }
 }

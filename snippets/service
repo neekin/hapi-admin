@@ -1,0 +1,37 @@
+const <ModelNameCapitalized> = require('../models/<ModelNameLowered>');
+
+class <ServiceNameCapitalized> {
+
+    static async getAll(filter) {
+        return <ModelNameCapitalized>.find(filter);
+    }
+
+    static async findById(<ModelNameLowered>Id) {
+        return <ModelNameCapitalized>.findById(<ModelNameLowered>Id);
+    }
+
+    static async create(<ModelNameLowered>Data) {
+        <ServiceNameCapitalized>.validateModel(<ModelNameLowered>Data);
+        return new <ModelNameCapitalized>(<ModelNameLowered>Data).save();
+    }
+
+    static async edit(<ModelNameLowered>Id, <ModelNameLowered>Data) {
+        <ServiceNameCapitalized>.validateModel(<ModelNameLowered>Data);
+        await <ModelNameCapitalized>.updateOne({_id: <ModelNameLowered>Id}, <ModelNameLowered>Data);
+        return this.findById(<ModelNameLowered>Id);
+    }
+
+    static async delete(<ModelNameLowered>Id) {
+        return <ModelNameCapitalized>.deleteOne({_id: <ModelNameLowered>Id});
+    }
+
+    static validateModel(data) {
+        const <ModelNameLowered> = new <ModelNameCapitalized>(data);
+        const validation = <ModelNameLowered>.validateSync();
+        if (validation)
+            throw validation.errors
+    }
+
+}
+
+module.exports = <ServiceNameCapitalized>;

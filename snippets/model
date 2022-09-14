@@ -1,0 +1,9 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const <ModelName>Schema = new Schema({
+<Attributes>
+});
+
+const <ModelName> = mongoose.model('<ModelName>', <ModelName>Schema);
+module.exports = <ModelName>;
