@@ -1,5 +1,5 @@
 const Hapi = require('@hapi/hapi')
-const _ = require('loadsh')
+const _ = require('lodash')
 module.exports = function(options){
     const initOptions={
         port:3000,
