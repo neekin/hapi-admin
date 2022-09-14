@@ -1,6 +1,6 @@
 {
   "name": "hapi-admin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "开箱即用的hapi admin框架。",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["hapi_admin","hapi-admin"],
+  "keywords": [
+    "hapi_admin",
+    "hapi-admin"
+  ],
   "author": "Nee Kin",
   "license": "ISC",
   "dependencies": {
