@@ -4,7 +4,7 @@
   "description": "开箱即用的hapi admin框架。",
   "main": "index.js",
   "bin": {
-    "scaffold": "bin/cli.js"
+    "hapi-admin": "bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
