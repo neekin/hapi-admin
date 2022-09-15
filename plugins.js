@@ -20,9 +20,9 @@ exports.plugin = {
       let adminOptions = _.merge(adminPlugin.options, options.admin);
       adminPlugin.options = adminOptions;
     }
-    if(options.swaager){
-      let swaagerOptions = _.merge(swaggerPlugin.options, options.swaager);
-      swaggerPlugin.options = swaagerOptions;
+    if(options.swagger){
+      let swaggerOptions = _.merge(swaggerPlugin.options, options.swagger);
+      swaggerPlugin.options = swaggerOptions;
     }
     if(options.jwt){
       let jwtOptions = _.merge(registerJwtPlugin.options, options.jwt);
