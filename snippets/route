@@ -4,7 +4,7 @@ exports.plugin = {
     name:'<ControllerNameLowered>',
     register: async function(server, options={}) {
         const prefix = options.prefix || ''
-        const config = options.apiConfg || {}
+        const config = options.apiConfig || {}
         server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>`,  options:{...config},handler: <ControllerNameCapitalized>Controller.getAll });
         server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>/{id}`,  options:{...config},handler: <ControllerNameCapitalized>Controller.findById });
         server.route({method: 'POST', path: `${prefix}/<RouteNameLowered>`, options:{...config},handler: <ControllerNameCapitalized>Controller.create });
