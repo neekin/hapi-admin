@@ -6,7 +6,13 @@ module.exports = (attributes) => {
 
     for (var i = 0; i < attributes.length; i++) {
         var attr = attributes[i].split(':');
-        console.log('报错了吗',attr)
+        if(typeof attr[1] == 'undefined'){
+           attr[1] ='string'
+        }
+        if(typeof attr[1]!='undefined' && attr[1]=='required'){
+            attr[2] = attr[1]
+            attr[1] ='string' 
+        }
         var type = attr[1].charAt(0).toUpperCase() + attr[1].slice(1);
         var required = attr[2] == 'required' ? true : false;
         attrs += `\t${attr[0]}: { type: ${type}, required: ${required} }`;
