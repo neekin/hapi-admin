@@ -31,27 +31,27 @@ class Route {
     }
 
     static register(modelName) {
-        const fileName = 'index.js';
-        const routeName = pluralize.plural(modelName);
-        const searchText = 'server.register';
-        const text = `\t\t{ plugin: require(\'./routes/${routeName}\'),options:{prefix:'/api/v1',apiConfig:{tags:['api','${modelName}']}} },\n`;
+        // const fileName = 'index.js';
+        // const routeName = pluralize.plural(modelName);
+        // const searchText = 'server.register';
+        // const text = `\t\t{ plugin: require(\'./routes/${routeName}\'),options:{prefix:'/api/v1',apiConfig:{tags:['api','${modelName}']}} },\n`;
         
-        FileEdit.injectTextToFile(fileName, searchText, text);
+        // FileEdit.injectTextToFile(fileName, searchText, text);
         
-        // adminResources
-        FileEdit.injectTextToFile(fileName, 'const adminResources',`\t\t{ resource: require(\'./models/${modelName}\'),options:{ properties:{...visibleProperties} } },\n`);
+        // // adminResources
+        // FileEdit.injectTextToFile(fileName, 'const adminResources',`\t\t{ resource: require(\'./models/${modelName}\'),options:{ properties:{...visibleProperties} } },\n`);
 
-        console.log('Route registered!');
+        // console.log('Route registered!');
     }
 
     static unregister(modelName) {
-        const fileName = 'index.js';
-        const routeName = pluralize.plural(modelName);
-        const searchText = `plugin: require(\'./routes/${routeName}\')`;
+        // const fileName = 'index.js';
+        // const routeName = pluralize.plural(modelName);
+        // const searchText = `plugin: require(\'./routes/${routeName}\')`;
         
-        FileEdit.removeTextFromFile(fileName, searchText);
+        // FileEdit.removeTextFromFile(fileName, searchText);
 
-        console.log('Route unregistered!');
+        // console.log('Route unregistered!');
     }
 
 }

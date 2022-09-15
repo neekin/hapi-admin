@@ -15,15 +15,18 @@ class Model {
             data = data.toString().split('<ModelName>').join(modelNameCapitalized);
             data = data.toString().split('<Attributes>').join(attributes);
             fs.writeFileSync(`models/${modelNameLowered}.js`, data.toString());
+            fs.writeFileSync(`resources/${modelNameLowered}.js`, 'module.exports={}');
         });
 
         console.log('Model created!');
+
+        
     }
 
     static undo(modelName) {
         const modelNameLowered = modelName.toLowerCase();
         fs.unlinkSync(`models/${modelNameLowered}.js`);
-
+        fs.unlinkSync(`resources/${modelNameLowered}.js`);
         console.log('Model removed!');
     }
 

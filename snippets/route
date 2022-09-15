@@ -3,13 +3,13 @@ const <ControllerNameCapitalized>Controller = require('../controllers/<Controlle
 exports.plugin = {
     name:'<ControllerNameLowered>',
     register: async function(server, options={}) {
-        const prefix = options.prefix || ''
-        const config = options.apiConfig || {}
-        server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>`,  options:{...config},handler: <ControllerNameCapitalized>Controller.getAll });
-        server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>/{id}`,  options:{...config},handler: <ControllerNameCapitalized>Controller.findById });
-        server.route({method: 'POST', path: `${prefix}/<RouteNameLowered>`, options:{...config},handler: <ControllerNameCapitalized>Controller.create });
-        server.route({method: 'PATCH', path: `${prefix}/<RouteNameLowered>/{id}`, options:{...config},handler: <ControllerNameCapitalized>Controller.edit });
-        server.route({ method: 'DELETE', path: `${prefix}/<RouteNameLowered>/{id}`, options:{...config},handler: <ControllerNameCapitalized>Controller.delete });
+        const prefix = ''
+        options['tags'] =['api','<ControllerNameCapitalized>']
+        server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>`,  options:options,handler: <ControllerNameCapitalized>Controller.getAll });
+        server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>/{id}`,  options:options,handler: <ControllerNameCapitalized>Controller.findById });
+        server.route({method: 'POST', path: `${prefix}/<RouteNameLowered>`, options:options,handler: <ControllerNameCapitalized>Controller.create });
+        server.route({method: 'PATCH', path: `${prefix}/<RouteNameLowered>/{id}`, options:options,handler: <ControllerNameCapitalized>Controller.edit });
+        server.route({ method: 'DELETE', path: `${prefix}/<RouteNameLowered>/{id}`, options:options,handler: <ControllerNameCapitalized>Controller.delete });
 
     }
 }

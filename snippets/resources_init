@@ -1,0 +1,28 @@
+const fs = require('fs')
+const path = require('path')
+const resources = []
+const defaultVisibleProperties ={
+    createdAt:{isVisible:{create:false,show:true,list:true}},
+    updatedAt:{isVisible:{create:false,show:true}}
+}
+const modelspath = path.resolve(__dirname,'../models')
+let filenames =fs.readdirSync(modelspath)
+filenames.forEach(file=>{
+   const filepath =  path.resolve(__dirname,'../models',file)
+   let options = {}
+   if(fs.existsSync(path.join(__dirname,file))){
+    options = require(path.join(__dirname,file))
+    if(options.properties){
+        options.properties = {...defaultVisibleProperties,...options.properties}
+    }
+   }
+   resources.push({
+    resource:require(filepath),
+    options:{
+        properties:{...defaultVisibleProperties},
+        ...options
+    }
+   })
+})
+
+module.exports = resources

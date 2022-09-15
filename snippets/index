@@ -1,21 +1,15 @@
 const { createServer } = require('hapi-admin')
 const Database = require('./config/database');
-
+const routes = require('./routes')
+const resources = require('./resources')
 const init = async () => {
-    const visibleProperties ={
-        createdAt:{isVisible:{create:false,show:true,list:true}},
-        updatedAt:{isVisible:{create:false,show:true}}
-    }
-    const adminResources = [
-    ];
     const server = await createServer({
-       admin:{resources:adminResources}
+       admin:{resources:resources}
     })
     
     Database.connect();
 
-    await server.register([
-    ]);
+    await server.register(routes);
 
     await server.start();
     console.log('Listening on %s', server.info.uri);

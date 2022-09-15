@@ -3,7 +3,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const folders = ['./config', './models', './routes', './services', './controllers'];
+const folders = ['./config', './models', './routes', './services', './controllers','./resources'];
 
 class Init {
 
@@ -17,6 +17,12 @@ class Init {
                 fs.mkdirSync(folders[i]);
             }
         }
+        fs.readFile(path.resolve(__dirname, '../snippets/route_init'), function(err, data) {
+            fs.writeFileSync(`./routes/index.js`, data.toString());
+        });
+        fs.readFile(path.resolve(__dirname, '../snippets/resources_init'), function(err, data) {
+            fs.writeFileSync(`./resources/index.js`, data.toString());
+        });
     
         console.log('Initialized!');
     }

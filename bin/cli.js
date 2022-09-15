@@ -39,7 +39,7 @@ if (args[0] == 'generate' || args[0]=='g') {
         Controller.generate(args[2]);
     } 
     if (args[1] == 'scaffold') {
-        const attributes = args.slice(4);
+        const attributes = args.slice(3);
         Model.generate(args[2], attributes);
         Service.generate(args[2]);
         Controller.generate(args[2]);
