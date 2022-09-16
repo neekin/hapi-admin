@@ -1,16 +1,8 @@
 const { createServer } = require('hapi-admin')
 const Database = require('./config/database');
-const routes = require('./routes')
-const resources = require('./resources')
 const init = async () => {
-    const server = await createServer({
-       admin:{resources:resources}
-    })
-    
+    const server = await createServer()
     Database.connect();
-
-    await server.register(routes);
-
     await server.start();
     console.log('Listening on %s', server.info.uri);
 
