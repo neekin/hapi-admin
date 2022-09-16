@@ -20,7 +20,6 @@ exports.plugin = {
       let adminOptions = _.merge(adminPlugin.options, options.admin);
       adminPlugin.options = adminOptions;
     }
-    console.log(resources)
     if(!adminPlugin.options.resources){
       adminPlugin.options.resources=resources
     }else{

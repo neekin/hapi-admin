@@ -2,7 +2,7 @@ const <ControllerNameCapitalized>Controller = require('../controllers/<Controlle
 
 exports.plugin = {
     name:'<ControllerNameLowered>',
-    register: async function(server, options={}) {
+    register: async function(server, options={auth:false}) {
         const prefix = ''
         options['tags'] =['api','<ControllerNameCapitalized>']
         server.route({method: 'GET', path: `${prefix}/<RouteNameLowered>`,  options:options,handler: <ControllerNameCapitalized>Controller.getAll });
