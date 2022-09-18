@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const Init = require('../logic/init');
-const DbMongo = require('../logic/db_mongo');
-const Model = require('../logic/model');
-const Route = require('../logic/route');
-const Service = require('../logic/service');
-const Controller = require('../logic/controller');
+const Init = require('../lib/actions/init');
+const DbMongo = require('../lib/actions/db_mongo');
+const Model = require('../lib/actions/model');
+const Route = require('../lib/actions/route');
+const Service = require('../lib/actions/service');
+const Controller = require('../lib/actions/controller');
 
 const [,, ...args] = process.argv;
 const validOptions = [ 'init','generate', 'destory','d','g' ]

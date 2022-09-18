@@ -4,11 +4,11 @@ const _ = require("lodash")
 const Inert = require("@hapi/inert")
 const Vision = require("@hapi/vision")
 // 引入依赖的插件
-const adminPlugin = require("./lib/admin")
-const jwtPlugin = require("./lib/jwt")
-const swaggerPlugin = require("./lib/swagger")
-const resources = require('./lib/registerResouces')
-const routes = require('./lib/registerRoutes')
+const adminPlugin = require("./lib/plugins/admin")
+const jwtPlugin = require("./lib/plugins/jwt")
+const swaggerPlugin = require("./lib/plugins/swagger")
+const resources = require('./lib/plugins/registerResouces')
+const routes = require('./lib/plugins/registerRoutes')
 exports.plugin = {
   pkg,
   register: async function (server, options) {
