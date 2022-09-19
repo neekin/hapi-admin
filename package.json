@@ -13,8 +13,15 @@
     "hapi_admin",
     "hapi-admin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neekin/hapi-admin.git"
+  },
   "author": "Nee Kin",
   "license": "ISC",
+  "peerDependencies":{
+    "mongoose":"^6.0.0"
+  },
   "dependencies": {
     "@admin-bro/hapi": "^3.0.0",
     "@admin-bro/mongoose": "^1.0.0",
@@ -31,7 +38,6 @@
     "inquirer": "^8.2.4",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "mongoose": "^6.0.0",
     "openapi-types": "^12.0.0",
     "ora": "^5.4.1",
     "pluralize": "^8.0.0"
