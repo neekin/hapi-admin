@@ -9,12 +9,21 @@ const jwtPlugin = require("./lib/plugins/jwt")
 const swaggerPlugin = require("./lib/plugins/swagger")
 // const resources = require('./lib/plugins/registerResouces')
 const routes = require('./lib/plugins/registerRoutes')
+const next = require('./lib/plugins/next')
 exports.plugin = {
   pkg,
   register: async function (server, options) {
     const  registerJwtPlugin ={
       plugin: jwtPlugin,
       options:{}
+    }
+    const nextPlugin = {
+      plugin:next,
+      options:{}
+    }
+    if(options.next){
+      let nextOptions = _.merge(nextPlugin.options, options.next);
+      nextPlugin.options = nextOptions;
     }
     // if (options.admin) {
     //   let adminOptions = _.merge(adminPlugin.options, options.admin);
@@ -40,6 +49,7 @@ exports.plugin = {
       // adminPlugin,
       swaggerPlugin,
       registerJwtPlugin,
+      nextPlugin,
       ...routes
     ]);
   },

@@ -23,14 +23,11 @@
     "mongoose": "^6.0.0"
   },
   "dependencies": {
-    "@admin-bro/hapi": "^3.0.0",
-    "@admin-bro/mongoose": "^1.0.0",
     "@hapi/boom": "^10.0.0",
     "@hapi/cookie": "^10.0.0",
     "@hapi/hapi": "^20.2.2",
     "@hapi/inert": "^7.0.0",
     "@hapi/vision": "^7.0.0",
-    "admin-bro": "^4.0.0",
     "commander": "^9.4.0",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^10.1.0",
@@ -43,6 +40,9 @@
     "lodash": "^4.17.21",
     "openapi-types": "^12.0.0",
     "ora": "^5.4.1",
-    "pluralize": "^8.0.0"
+    "pluralize": "^8.0.0",
+    "next": "latest",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   }
 }
