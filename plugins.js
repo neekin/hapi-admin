@@ -9,6 +9,7 @@ const jwtPlugin = require("./lib/plugins/jwt")
 const swaggerPlugin = require("./lib/plugins/swagger")
 const resources = require('./lib/plugins/registerResouces')
 const routes = require('./lib/plugins/registerRoutes')
+const pagination = require('./lib/plugins/pagination')
 exports.plugin = {
   pkg,
   register: async function (server, options) {
@@ -40,6 +41,7 @@ exports.plugin = {
       adminPlugin,
       swaggerPlugin,
       registerJwtPlugin,
+      pagination,
       ...routes
     ]);
   },

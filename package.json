@@ -35,6 +35,7 @@
     "download-git-repo": "^3.0.2",
     "fs-extra": "^10.1.0",
     "hapi-auth-jwt2": "^10.0.0",
+    "hapi-pagination": "^4.0.0",
     "hapi-swagger": "^14.5.5",
     "inquirer": "^8.2.4",
     "joi": "^17.0.0",
