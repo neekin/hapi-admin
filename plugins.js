@@ -4,12 +4,11 @@ const _ = require("lodash")
 const Inert = require("@hapi/inert")
 const Vision = require("@hapi/vision")
 // 引入依赖的插件
-const adminPlugin = require("./lib/plugins/admin")
+// const adminPlugin = require("./lib/plugins/admin")
 const jwtPlugin = require("./lib/plugins/jwt")
 const swaggerPlugin = require("./lib/plugins/swagger")
-const resources = require('./lib/plugins/registerResouces')
+// const resources = require('./lib/plugins/registerResouces')
 const routes = require('./lib/plugins/registerRoutes')
-const pagination = require('./lib/plugins/pagination')
 exports.plugin = {
   pkg,
   register: async function (server, options) {
@@ -17,15 +16,15 @@ exports.plugin = {
       plugin: jwtPlugin,
       options:{}
     }
-    if (options.admin) {
-      let adminOptions = _.merge(adminPlugin.options, options.admin);
-      adminPlugin.options = adminOptions;
-    }
-    if(!adminPlugin.options.resources){
-      adminPlugin.options.resources=resources
-    }else{
-      adminPlugin.options.resources = _.merge(resources,adminPlugin.options.resources)
-    }
+    // if (options.admin) {
+    //   let adminOptions = _.merge(adminPlugin.options, options.admin);
+    //   adminPlugin.options = adminOptions;
+    // }
+    // if(!adminPlugin.options.resources){
+    //   adminPlugin.options.resources=resources
+    // }else{
+    //   adminPlugin.options.resources = _.merge(resources,adminPlugin.options.resources)
+    // }
     if(options.swagger){
       let swaggerOptions = _.merge(swaggerPlugin.options, options.swagger);
       swaggerPlugin.options = swaggerOptions;
@@ -38,10 +37,9 @@ exports.plugin = {
     await server.register([
       Inert,
       Vision,
-      adminPlugin,
+      // adminPlugin,
       swaggerPlugin,
       registerJwtPlugin,
-      pagination,
       ...routes
     ]);
   },
