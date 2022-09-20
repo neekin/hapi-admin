@@ -36,7 +36,6 @@ exports.plugin = {
       registerJwtPlugin.options = jwtOptions;
     }
     if(checkSimple() && !checkPro()){
-      console.log('简单管理界面组件')
       await server.register({
        plugin:   require('hapi-admin-simple'),
        options
