@@ -17,6 +17,7 @@
     "type": "git",
     "url": "https://github.com/neekin/hapi-admin.git"
   },
+  "homepage": "https://github.com/neekin/hapi-admin#readme",
   "author": "Nee Kin",
   "license": "ISC",
   "peerDependencies": {
