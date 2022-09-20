@@ -1,13 +1,13 @@
 {
   "name": "hapi-admin",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "开箱即用的hapi admin框架。",
   "main": "index.js",
   "bin": {
     "hapi-admin": "bin/cli.js"
   },
   "scripts": {
-    "example": "next example"
+    "test": "next example"
   },
   "keywords": [
     "hapi_admin",
@@ -23,9 +23,6 @@
     "mongoose": "^6.0.0"
   },
   "dependencies": {
-    "@babel/core": "^7.19.1",
-    "@babel/plugin-proposal-do-expressions": "^7.18.6",
-    "@babel/preset-react": "^7.18.6",
     "@hapi/boom": "^10.0.0",
     "@hapi/cookie": "^10.0.0",
     "@hapi/hapi": "^20.2.2",
