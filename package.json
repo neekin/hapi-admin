@@ -7,7 +7,7 @@
     "hapi-admin": "bin/cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "example": "next example"
   },
   "keywords": [
     "hapi_admin",

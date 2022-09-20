@@ -1,6 +1,8 @@
 "use strict";
 const pkg = require("./package");
 const _ = require("lodash");
+const fs = require('fs')
+const path = require('path')
 const Inert = require("@hapi/inert");
 const Vision = require("@hapi/vision");
 // 引入依赖的插件
@@ -27,7 +29,11 @@ exports.plugin = {
       nextPlugin.options = nextOptions;
     }
     if (checkPro()) {
-      console.log("引入了 hapi-admin-pro");
+      // console.log("引入了 hapi-admin-pro");
+      // const file = path.join(path.resolve('./node_modules/hapi-admin-pro'),'pages')
+      // const taget = path.join(path.resolve('./node_modules/hapi-admin'),'pages/admin')
+      // // console.log(file)
+      // fs.symlink(file,taget,(err)=>{})
     }
     //  else {
     //   if (options.admin) {
