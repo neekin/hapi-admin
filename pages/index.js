@@ -1,1 +1,1 @@
-export default ()=>(<div>hpai-admin is very good</div>)
+export default ()=>(<div>hpai-admin is working</div>)

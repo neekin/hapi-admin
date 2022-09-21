@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const { program } = require('commander')
-const package = require('../../package.json')
-const registerCommand = require('../../lib/command')
+const package = require('../package.json')
+const registerCommand = require('../lib/command')
 registerCommand(program)
 
 

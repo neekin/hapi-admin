@@ -1,0 +1,9 @@
+import nextHead from "next/head";
+export default ()=>(
+  <>
+    <nextHead>
+        <title><PageName></title>
+    </nextHead>
+    <h1>Pages#<PageName></h1>
+    <p>Find me in pages/<PageNameSeat>.js</p>
+  </>)

@@ -1,0 +1,8 @@
+const { createServer } = require('hapi-admin')
+const init = async () => {
+    const server = await createServer()
+    await server.start();
+    console.log('Listening on %s', server.info.uri);
+
+}
+init();
