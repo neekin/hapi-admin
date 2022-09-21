@@ -20,9 +20,6 @@
   "homepage": "https://github.com/neekin/hapi-admin#readme",
   "author": "Nee Kin",
   "license": "ISC",
-  "peerDependencies": {
-    "mongoose": "^6.0.0"
-  },
   "dependencies": {
     "@hapi/boom": "^10.0.0",
     "@hapi/cookie": "^10.0.0",
