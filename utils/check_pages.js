@@ -6,7 +6,7 @@ const projectPagesPath = path.resolve('.')
 
 module.exports ={
     defaultPagesDir(){
-        const projectHasPagesDir =   fs.existsSync(path.join(projectPagesPath,'./pages')) || fs.existsSync(path.join(projectPagesPath,'./src/pages'))
+        const projectHasPagesDir = fs.existsSync(path.join(projectPagesPath,'./src/pages')) ||  fs.existsSync(path.join(projectPagesPath,'./pages')) 
         return projectHasPagesDir ? projectPagesPath: modulesPagesPath
     }
 }
