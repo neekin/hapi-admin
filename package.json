@@ -36,8 +36,6 @@
     "lodash": "^4.17.21",
     "openapi-types": "^12.0.0",
     "pluralize": "^8.0.0",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "latest"
   }
 }
