@@ -1,4 +1,3 @@
-// const path = require("path");
 const babelIncludeRegexes = [
   /next[\\/]dist[\\/]shared[\\/]lib/,
   /next[\\/]dist[\\/]client/,
@@ -8,20 +7,32 @@ const babelIncludeRegexes = [
   /hapi-admin[\\/]/,
   /hapi-admin-pro[\\/]/
 ]
-module.exports = function (config, { dir, defaultLoaders }) {
-  config.module.rules = [
-    ...config.module.rules,
-    {
-      test: /\.(tsx|ts|js|cjs|mjs|jsx)$/,
-      include: [dir, ...babelIncludeRegexes],
-      use: defaultLoaders.babel,
-      exclude: (excludePath) => {
-        if (babelIncludeRegexes.some((r) => r.test(excludePath))) {
-          return false;
-        }
-        return /node_modules/.test(excludePath);
-      },
+
+
+function withHapiAdmin({adminOptions={},...nextConfig}) {
+  return Object.assign({}, nextConfig, {
+    webpack(config, opt) {
+      const   { dir, defaultLoaders } = opt
+      config.module.rules = [
+        ...config.module.rules,
+        {
+          test: /\.(tsx|ts|js|cjs|mjs|jsx)$/,
+          include: [dir, ...babelIncludeRegexes],
+          use: defaultLoaders.babel,
+          exclude: (excludePath) => {
+            if (babelIncludeRegexes.some((r) => r.test(excludePath))) {
+              return false;
+            }
+            return /node_modules/.test(excludePath);
+          },
+        },
+      ];
+      if (typeof nextConfig.webpack === "function") {
+        return nextConfig.webpack(config, opt);
+      }
+      return config;
     },
-  ];
-  return config;
-};
+  });
+}
+
+module.exports = withHapiAdmin
