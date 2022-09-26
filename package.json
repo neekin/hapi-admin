@@ -1,6 +1,6 @@
 {
   "name": "hapi-admin",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "开箱即用的hapi admin框架。",
   "main": "index.js",
   "bin": {
