@@ -23,7 +23,6 @@
   "dependencies": {
     "@hapi/hapi": "^20.2.2",
     "@hapi/boom": "^10.0.0",
-    "@hapi/cookie": "^10.0.0",
     "@hapi/inert": "^7.0.0",
     "@hapi/vision": "^7.0.0",
     "commander": "^9.4.0",
