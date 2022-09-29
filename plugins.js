@@ -7,6 +7,7 @@ const Vision = require("@hapi/vision");
 
 // 引入依赖的插件
 const jwtPlugin = require("./lib/plugins/jwt");
+const cookiePlugin = require("./lib/plugins/cookie");
 const swaggerPlugin = require("./lib/plugins/swagger");
 
 const routes = require("./lib/plugins/registerRoutes");
@@ -23,6 +24,10 @@ exports.plugin = {
       plugin: next,
       options: {},
     };
+    const registerCookiePlugin = {
+      plugin: cookiePlugin,
+      options:{}
+    }
     if (options.next) {
       let nextOptions = _.merge(nextPlugin.options, options.next);
       nextPlugin.options = nextOptions;
@@ -34,6 +39,10 @@ exports.plugin = {
     if (options.jwt) {
       let jwtOptions = _.merge(registerJwtPlugin.options, options.jwt);
       registerJwtPlugin.options = jwtOptions;
+    }
+    if (options.cookie) {
+      let cookieOptions = _.merge(registerCookiePlugin.options, options.cookie);
+      registerCookiePlugin.options = cookieOptions;
     }
     if(checkSimple() && !checkPro()){
       await server.register({
@@ -47,6 +56,7 @@ exports.plugin = {
       ...routes,
       swaggerPlugin,
       registerJwtPlugin,
+      registerCookiePlugin,
       nextPlugin,
     ]);
 

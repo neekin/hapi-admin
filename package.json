@@ -25,6 +25,7 @@
     "@hapi/boom": "^10.0.0",
     "@hapi/inert": "^7.0.0",
     "@hapi/vision": "^7.0.0",
+    "@hapi/cookie": "^11.0.0",
     "commander": "^9.4.0",
     "fs-extra": "^10.1.0",
     "hapi-auth-jwt2": "^10.0.0",
