@@ -59,7 +59,5 @@ exports.plugin = {
       registerCookiePlugin,
       nextPlugin,
     ]);
-
-
   },
 };
