@@ -2,6 +2,7 @@ const Hapi = require('@hapi/hapi')
 const _ = require('lodash')
 const createJSONWebToken = require('./utils/createJWT')
 const getTokenHeader = require('./utils/header')
+const getCookie = require('./utils/getCookie')
 module.exports ={
     createServer:async function(options={}){
         const initOptions={
@@ -14,5 +15,6 @@ module.exports ={
         return server
     },
     createJSONWebToken,
-    getTokenHeader
+    getTokenHeader,
+    getCookie
 } 

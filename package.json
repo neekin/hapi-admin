@@ -21,11 +21,12 @@
   "author": "Nee Kin",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^20.2.2",
     "@hapi/boom": "^10.0.0",
-    "@hapi/inert": "^7.0.0",
-    "@hapi/vision": "^7.0.0",
     "@hapi/cookie": "^11.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^7.0.0",
+    "@hapi/iron": "^7.0.0",
+    "@hapi/vision": "^7.0.0",
     "commander": "^9.4.0",
     "fs-extra": "^10.1.0",
     "hapi-auth-jwt2": "^10.0.0",
@@ -34,8 +35,8 @@
     "joi": "^17.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
+    "next": "latest",
     "openapi-types": "^12.0.0",
-    "pluralize": "^8.0.0",
-    "next": "latest"
+    "pluralize": "^8.0.0"
   }
 }

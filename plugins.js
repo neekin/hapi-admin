@@ -29,7 +29,7 @@ exports.plugin = {
       options:{}
     }
     if (options.next) {
-      let nextOptions = _.merge(nextPlugin.options, options.next);
+      let nextOptions = _.merge(nextPlugin.options, options.next,options.serve);
       nextPlugin.options = nextOptions;
     }
     if (options.swagger) {
