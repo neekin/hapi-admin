@@ -1,7 +1,8 @@
 const Hapi = require('@hapi/hapi')
 const _ = require('lodash')
 const createJSONWebToken = require('./utils/createJWT')
-const getTokenHeader = require('./utils/header')
+
+const {headers , getJoi} = require('./utils/joi')
 module.exports ={
     createServer:async function(options={}){
         const host = process.env.NODE_ENV === "production" ?'0.0.0.0':'localhost'
@@ -15,5 +16,6 @@ module.exports ={
         return server
     },
     createJSONWebToken,
-    getTokenHeader
+    headers,
+    getJoi
 } 
