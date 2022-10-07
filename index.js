@@ -4,9 +4,10 @@ const createJSONWebToken = require('./utils/createJWT')
 const getTokenHeader = require('./utils/header')
 module.exports ={
     createServer:async function(options={}){
+        const host = process.env.NODE_ENV === "production" ?'0.0.0.0':'localhost'
         const initOptions={
             port:3000,
-            host:"localhost"
+            host
         }
         const serverOptions=_.merge(initOptions,options.server)
         const server = Hapi.server(serverOptions)

@@ -53,10 +53,10 @@ exports.plugin = {
     await server.register([
       Inert,
       Vision,
-      ...routes,
       swaggerPlugin,
       registerJwtPlugin,
       registerCookiePlugin,
+      ...routes,
       nextPlugin,
     ]);
   },
