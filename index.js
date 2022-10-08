@@ -1,6 +1,7 @@
 const Hapi = require('@hapi/hapi')
 const _ = require('lodash')
 const createJSONWebToken = require('./utils/createJWT')
+const Wreck = require('@hapi/wreck');
 
 const {headers , getJoi} = require('./utils/joi')
 module.exports ={
@@ -17,5 +18,6 @@ module.exports ={
     },
     createJSONWebToken,
     headers,
-    getJoi
+    getJoi,
+    httpClient:Wreck
 } 

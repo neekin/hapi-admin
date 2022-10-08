@@ -24,6 +24,7 @@
     "@hapi/boom": "^10.0.0",
     "@hapi/cookie": "^11.0.0",
     "@hapi/hapi": "^20.2.2",
+    "@hapi/wreck": "^18.0.0",
     "@hapi/inert": "^7.0.0",
     "@hapi/iron": "^7.0.0",
     "@hapi/vision": "^7.0.0",
