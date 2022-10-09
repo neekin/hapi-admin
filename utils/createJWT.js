@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
 
 const defaultExp = Math.floor(Date.now() / 1000) + 60 * 60;
-module.exports = (username, JWT_SECRET='NeverShareYourSecret', exp = defaultExp) => {
+module.exports = (obj={username:'test'}, JWT_SECRET='NeverShareYourSecret', exp = defaultExp) => {
   return jwt.sign(
     {
-      username,
+      ...obj,
       exp,
     },
     JWT_SECRET
