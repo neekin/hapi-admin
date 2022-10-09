@@ -3,7 +3,7 @@ const Joi = require("joi");
 
 module.exports = {
   headers: () => {
-    Joi.object({
+    return Joi.object({
       authorization: Joi.string().required(),
     }).unknown();
   },
